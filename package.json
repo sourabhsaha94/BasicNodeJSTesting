@@ -4,7 +4,7 @@
   "description": "Testing coveralls",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text ./node_modules/.bin/mocha"
+    "test": "nyc --reporter=html --reporter=text ./node_modules/.bin/mocha",
     "coverage":"nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Sourabh Saha",
