@@ -1,0 +1,18 @@
+{
+  "name": "coverallstest",
+  "version": "1.0.0",
+  "description": "Testing coveralls",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ./node_modules/.bin/mocha"
+  },
+  "author": "Sourabh Saha",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0",
+    "request": "^2.85.0"
+  }
+}
