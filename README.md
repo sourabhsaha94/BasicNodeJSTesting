@@ -74,7 +74,7 @@ npm install --save-dev nyc mocha chai coveralls
 * If you've used Travis, then the coverage information will get automatically on the site displayed once you're build is complete.
 * If you've added the COVERALLS_REPO_TOKEN manually into you're environment variables, running `npm test` and then `npm run coverage` will send your coverage information to the website.
 
-[](!coverage.png)
+![Coverage](coverage.png)
 
 # Screencast
 
