@@ -18,6 +18,14 @@ Coveralls takes the build data from whichever CI service your project uses, pars
 
 
 # Setup instructions
+
+## Relevant files
+
+* [package.json](package.json)
+* [Code to test](app/converter.js)
+* [Code with tests](test/converter.js)
+* [Travis yml](.travis.yml)
+
 ## 1. Tests that cover code
 * Before you begin to generate coverage reports, make sure you have tests that run on a code snippet
 * We have used [mocha](https://mochajs.org/) and [chai](http://www.chaijs.com/) to create simple tests for our code. For example:
