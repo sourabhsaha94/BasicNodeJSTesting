@@ -4,7 +4,8 @@
   "description": "Testing coveralls",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ./node_modules/.bin/mocha"
+    "test": "nyc --reporter=html --reporter=text ./node_modules/.bin/mocha"
+    "coverage":"nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Sourabh Saha",
   "license": "ISC",
@@ -14,5 +15,8 @@
     "mocha": "^5.0.4",
     "nyc": "^11.6.0",
     "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0"
   }
 }
