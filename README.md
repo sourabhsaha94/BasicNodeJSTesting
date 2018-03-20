@@ -15,3 +15,56 @@ Coveralls takes the build data from whichever CI service your project uses, pars
 # Justify his or her own opinions about the tool?
 
 # Personalize the topic, such as by bringing in their own experiences?
+
+
+# Setup instructions
+## 1. Tests that cover code
+* Before you begin to generate coverage reports, make sure you have tests that run on a code snippet
+* We have used [mocha](https://mochajs.org/) and [chai](http://www.chaijs.com/) to create simple tests for our code. For example:
+```
+describe("Temperature converter",function(){
+  describe("C to F conversion",function(){
+    it("converts c to f",function(){
+      var f = converter.celsiusToFarenheit(30);
+      expect(f).to.equal(86);
+    });
+  });
+  describe("F to C conversion",function(){
+    it("converts f to c",function(){
+      var c = converter.farenheitToCelsius(50);
+      expect(c).to.equal(10);
+    });
+  });
+});
+```
+
+## 2. Install the required packages
+* Since, we are testing javascript code, we used npm and nodejs for our application. Npm uses [package.json](package.json) file
+* The packages that were using are:
+```
+npm install --save-dev nyc mocha chai coveralls
+```
+
+## 3. Update package.json 
+* The [package.json](package.json) file must have the following line in the "scripts" section:
+```
+"scripts": {
+    "test": "nyc --reporter=html --reporter=text ./node_modules/.bin/mocha",
+    "coverage":"nyc report --reporter=text-lcov | coveralls"
+  }
+```
+
+## 4. Connect Github repository to Coveralls
+* [Coveralls.io](https://coveralls.io/) works with Github repositories when you link your Github username to the tool
+* Once your account is linked and you're repositories have been synced, you can add the desired repository by flicking a switch at [https://coveralls.io/repos/new](https://coveralls.io/repos/new)
+* There are two ways with which you can send coverage information to coveralls:
+  * Using a CI tool like Travis CI, you need to set up your repository with Travis and have `after_success: npm run coverage` in the `.travis.yml` file
+  * Using the command line, you need to add your repo token to the environment variables using `export COVERALLS_REPO_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxx`. The repo token can be found when you go your repo url in coveralls, for example `https://coveralls.io/github/sourabhsaha94/BasicNodeJSTesting`
+
+## 5. Checking the coverage
+* After the repository has been set up, and it has been linked with Travis or you're command line, you can go ahead and push the tests to your repository.
+* If you've used Travis, then the coverage information will get automatically on the site displayed once you're build is complete.
+* If you've added the COVERALLS_REPO_TOKEN manually into you're environment variables, running `npm test` and then `npm run coverage` will send your coverage information to the website.
+
+# Screencast
+
