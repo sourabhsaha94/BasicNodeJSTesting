@@ -35,10 +35,10 @@ describe("Temperature converter",function(){
       expect(f).to.equal(86);
     });
   });
-  describe("F to C conversion",function(){
+  /*describe("F to C conversion",function(){
     it("converts f to c",function(){
       var c = converter.farenheitToCelsius(50);
       expect(c).to.equal(10);
     });
-  });
+  });*/
 });
